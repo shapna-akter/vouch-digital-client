@@ -1,5 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { toast } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
 
 const AllContacts = () => {
     const { data: contacts = [], refetch } = useQuery({
@@ -43,7 +44,8 @@ const AllContacts = () => {
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Location</th>
-                            <th>Action</th>
+                            <th>Delete</th>
+                            <th>Update</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,6 +58,13 @@ const AllContacts = () => {
                                     <td>{contact.phone}</td>
                                     <td>{contact.location}</td>
                                     <td><button onClick={() => handleDeleteContact(contact)} className='btn btn-xs btn-error'>Delete</button></td>
+                                    <td>
+                                        <Link to={`/update/${contact._id}`}>
+                                            <button className='btn btn-xs btn-primary'>
+                                                Update
+                                            </button>
+                                        </Link>
+                                    </td>
                                 </tr>)
                         }
                     </tbody>
