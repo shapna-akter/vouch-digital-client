@@ -8,7 +8,7 @@ const AddressBook = () => {
 
     const handleLogin = data => {
         
-        fetch('http://localhost:5000/addressBook', {
+        fetch('https://vouch-digital-server.vercel.app/addressBook', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

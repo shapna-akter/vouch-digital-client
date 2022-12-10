@@ -10,7 +10,7 @@ const Update = () => {
     const handleUpdate = event =>{
         event.preventDefault();
 
-        fetch(`http://localhost:5000/contacts/${storedContact._id}`, {
+        fetch(`https://vouch-digital-server.vercel.app/contacts/${storedContact._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

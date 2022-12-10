@@ -25,7 +25,7 @@ export const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <Update></Update>,
-                loader: ({params}) => fetch(`http://localhost:5000/contacts/${params.id}`)
+                loader: ({params}) => fetch(`https://vouch-digital-server.vercel.app/contacts/${params.id}`)
             },
         ]
     }

@@ -6,7 +6,7 @@ const AllContacts = () => {
     const { data: contacts = [], refetch } = useQuery({
         queryKey: ['contacts'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/contacts')
+            const res = await fetch('https://vouch-digital-server.vercel.app/contacts')
             const data = res.json();
             return data;
         }
@@ -16,7 +16,7 @@ const AllContacts = () => {
     const handleDeleteContact = contact => {
         const proceed = window.confirm("Are you sure want to delete this contact?");
         if (proceed) {
-            fetch(`http://localhost:5000/contacts/${contact._id}`, {
+            fetch(`https://vouch-digital-server.vercel.app/contacts/${contact._id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
